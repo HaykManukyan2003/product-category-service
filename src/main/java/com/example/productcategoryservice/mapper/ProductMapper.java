@@ -1,18 +1,18 @@
 package com.example.productcategoryservice.mapper;
 
-import com.example.productcategoryservice.dto.CategoryResponseDto;
-import com.example.productcategoryservice.dto.CreateCategoryDto;
-import com.example.productcategoryservice.model.Category;
+import com.example.productcategoryservice.dto.CreateProductDto;
+import com.example.productcategoryservice.dto.ProductResponseDto;
+import com.example.productcategoryservice.model.Product;
 import org.mapstruct.Mapper;
 
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface CategoryMapper {
+public interface ProductMapper {
 
-    List<CategoryResponseDto> map(List<Category> categoryList);
+    List<ProductResponseDto> map(List<Product> productList);
 
-    CategoryResponseDto map(Category category);
+    ProductResponseDto map(Product product);
 
-    Category map(CreateCategoryDto createCategoryDto);
+    Product map(CreateProductDto createProductDto);
 }

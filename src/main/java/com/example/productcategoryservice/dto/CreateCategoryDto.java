@@ -1,2 +1,14 @@
-package com.example.productcategoryservice.dto;public class CreateCategoryDto {
+package com.example.productcategoryservice.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class CreateCategoryDto {
+    private String name;
 }
