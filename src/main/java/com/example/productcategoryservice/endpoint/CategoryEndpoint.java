@@ -1,5 +1,6 @@
 package com.example.productcategoryservice.endpoint;
 
+import com.example.productcategoryservice.dto.CategoryResponseDto;
 import com.example.productcategoryservice.dto.CreateCategoryDto;
 import com.example.productcategoryservice.mapper.CategoryMapper;
 import com.example.productcategoryservice.model.Category;
@@ -35,7 +36,7 @@ public class CategoryEndpoint {
     @PutMapping("/categories/{id}")
     public ResponseEntity<?> updateCategory(@RequestBody CreateCategoryDto createCategoryDto, @PathVariable("id") int id) throws Exception {
         Category category = categoryService.getCategoryById(id);
-        category.setName(categoryMapper.map(createCategoryDto).getName());
+        category.setName(createCategoryDto.getName());
         categoryService.save(category);
         return ResponseEntity.noContent().build();
     }

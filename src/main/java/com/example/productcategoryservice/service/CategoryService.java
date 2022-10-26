@@ -27,11 +27,7 @@ public class CategoryService {
         return optional.get();
     }
 
-    public void save(Category category) throws Exception {
-        List<Category> all = categoryRepository.findAll();
-        for (Category obj : all) {
-            if (Objects.equals(obj.getName(), category.getName())) throw new Exception();
-        }
+    public void save(Category category) {
         categoryRepository.save(category);
     }
 
