@@ -1,11 +1,11 @@
 package com.example.productcategoryservice.endpoint;
 
-import com.example.productcategoryservice.dto.CategoryResponseDto;
 import com.example.productcategoryservice.dto.CreateCategoryDto;
 import com.example.productcategoryservice.mapper.CategoryMapper;
 import com.example.productcategoryservice.model.Category;
 import com.example.productcategoryservice.service.CategoryService;
 import lombok.RequiredArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +28,7 @@ public class CategoryEndpoint {
     }
 
     @PostMapping("/categories")
-    public ResponseEntity<?> createCategory(@RequestBody CreateCategoryDto createCategoryDto) throws Exception {
+    public ResponseEntity<?> createCategory(@RequestBody CreateCategoryDto createCategoryDto) {
         categoryService.save(categoryMapper.map(createCategoryDto));
         return ResponseEntity.noContent().build();
     }
@@ -36,7 +36,7 @@ public class CategoryEndpoint {
     @PutMapping("/categories/{id}")
     public ResponseEntity<?> updateCategory(@RequestBody CreateCategoryDto createCategoryDto, @PathVariable("id") int id) throws Exception {
         Category category = categoryService.getCategoryById(id);
-        category.setName(createCategoryDto.getName());
+        category.setId(createCategoryDto.getId());
         categoryService.save(category);
         return ResponseEntity.noContent().build();
     }

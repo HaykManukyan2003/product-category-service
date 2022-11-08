@@ -33,6 +33,22 @@
             <column name="category_id" type="int">
                 <constraints foreignKeyName="category_id_fk" referencedTableName="category" referencedColumnNames="id"/>
             </column>
+            <column name="user_id" type="int">
+                <constraints foreignKeyName="product_user_id_fk" referencedTableName="product" referencedColumnNames="id"/>
+            </column>
+        </createTable>
+
+        <!--        create table user-->
+        <createTable tableName="user">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="name" type="varchar(255)"/>
+            <column name="surname" type="varchar(255)"/>
+            <column name="email" type="varchar(255)"/>
+            <column name="password" type="varchar(255)"/>
+            <column name="role" type="varchar(255)"/>
         </createTable>
 
     </changeSet>

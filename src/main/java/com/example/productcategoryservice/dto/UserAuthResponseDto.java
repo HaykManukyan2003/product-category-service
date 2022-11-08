@@ -6,10 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class CreateCategoryDto {
+public class UserAuthResponseDto {
 
-    private int id;
+    private String token;
+    private UserDto user;
 }

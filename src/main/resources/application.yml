@@ -6,3 +6,25 @@ spring:
 
   liquibase:
     change-log: classpath:db/changelog/migration.xml
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+
+jwt:
+  secret: k205j@dkjf0%^@
+  expiration: 330000
+
+logging:
+  logback:
+    rollingpolicy:
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i.gz
+      max-file-size: 10MB
+  file:
+    name: C:\Users\Hayk\IdeaProjects\product-category-service\log\application.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    root: info
+    com.example: info

@@ -13,6 +13,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "product")
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -21,4 +22,6 @@ public class Product {
     private double price;
     @ManyToOne
     private Category category;
+    @ManyToOne
+    private User user;
 }
